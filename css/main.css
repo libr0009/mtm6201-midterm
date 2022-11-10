@@ -69,7 +69,7 @@ h3 {
 }
 
 /*takes out default underline and color for all links.*/
-.songa:link,.songb:link,.songc:link {
+a:link {
     color: white;
 }
 
