@@ -1,0 +1,145 @@
+
+/*sets background and font for all pages.*/
+body {
+    background-color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/*sets logo to the center of all pages*/
+.homelogo {
+    text-align: center;
+}
+
+/*sets the header "The Weeknd" to the center of all pages.*/
+header {
+    color: red;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+/*makes the 3 boxes display horizontally, justify content - space around makes sure there is always space between and around the boxes so they aren't squished together. */
+.songs {
+    display: flex;
+    color: white;
+    text-align: center;
+    justify-content: space-around;
+}
+
+
+h2 {
+    color: red;
+    text-align: center;
+    font-size: 2rem;
+}
+
+h3 {
+    color: white;
+    font-weight: 300;
+    text-align: center;
+}
+
+/*this is to have the description (h3's) float to the left side of the images*/
+.tracka,.trackb,.trackc {
+    float: left;
+    margin: 4rem;
+}
+
+
+/*this is so that the smaller image that is optimized for smaller screens responsively stays center as you shrink the page.*/
+.tracka1,.trackb1,.trackc1 {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+h3 {
+    margin: 4rem;
+}
+
+.trackone,.tracktwo,.trackthree {
+    margin: auto;
+}
+
+/*sets width and height of the 3 boxes for the larger screen sizes and sets background colour for all screen sizes*/
+.songa,.songb,.songc {
+    width: 270px;
+    height: 500px;
+    background-color: rgba(76, 0, 0, 1);
+}
+
+/*takes out default underline and color for all links.*/
+.songa:link,.songb:link,.songc:link {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
+
+
+@media screen and (min-width: 900px) {
+
+    /*so only jumping animation shows for larger screen sizes.*/
+    .songa:hover,.songb:hover,.songc:hover {
+        background-color: rgba(37, 1, 1, 0.49);
+        color: red;
+        transition: 1.5s;
+        animation-name: jump;
+        animation-duration: 1s;
+    }
+   
+    @keyframes jump {
+        50% { transform: translate(0, -100px); }
+    
+    }
+
+    /*so that smaller image is not shown while viewing with larger screen sizes.*/
+    .tracka1,.trackb1,.trackc1 {
+        display:none;
+    }
+}
+
+
+@media screen and (max-width: 900px){
+    
+    /*so that the 3 boxes display in a coloumn instead of horizontally while viewing with smaller screen and that the text go from the right..*/
+    .songs {
+        display: inline-block;
+        color: white;
+        text-align: right;
+
+    }
+
+    /*so that the width of the boxes fit across the screen instead of having a fixed width like shown with larger screens.*/
+    .songa,.songb,.songc {
+        width: auto;
+        height: 270px;
+        background-color: rgba(76, 0, 0, 1);
+    }
+
+    /*text floats to the left of image.*/
+    .trackone,.tracktwo,.trackthree {
+        float: left;
+    }
+
+
+    h1,p {
+        margin:1rem;
+    }
+
+    /*fades to darker background color when hovered and no jumping animation in smaller screens.*/
+    .songa:hover,.songb:hover,.songc:hover {
+        background-color: rgba(37, 1, 1, 0.49);
+        color: red;
+        transition: 1s;
+    }
+    /*hides larger image and only shows smaller image while viewing with smaller screen.*/
+    .tracka,.trackb,.trackc {
+        display:none;
+    }
+}
